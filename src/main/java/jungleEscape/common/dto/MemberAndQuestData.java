@@ -16,11 +16,11 @@ public record MemberAndQuestData(
 ) {
     public static MemberAndQuestData fromEntity(Member member, Quest quest) {
         String memberLevel = "Lv. " + member.getLevel();
-        String memberExp = member.getExp() + "/" + member.getLevel();
+        String memberExp = member.getExp() + "/" + MaxExpPerLevelMapper.getMaxExp(member.getLevel());
         String memberImgUrl = member.getImgUrl();
         String questSummary = quest.getSummary();
         String questName = quest.getName();
-        String questLevel = String.valueOf(quest.getLevel());
+        String questLevel = QuestLevelMapper.getLevelString(quest.getLevel());
         int questExp = quest.getExp();
         String questDescription = quest.getDescription();
 

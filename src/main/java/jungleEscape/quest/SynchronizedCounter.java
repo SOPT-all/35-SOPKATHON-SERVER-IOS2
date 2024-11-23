@@ -8,12 +8,11 @@ public class SynchronizedCounter {
         this.maxValue = maxValue;
     }
 
-    public synchronized int incrementAndSet() {
+    public synchronized void incrementAndSet() {
         counter++;
         if (counter > maxValue) {
             counter = 1; // maxValue를 넘으면 1로 초기화
         }
-        return counter;
     }
 
     public synchronized int getCounter() {

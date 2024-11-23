@@ -23,4 +23,23 @@ public class Quest {
     @Column(nullable = false)
     private int exp;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getExp() {
+        return exp;
+    }
 }

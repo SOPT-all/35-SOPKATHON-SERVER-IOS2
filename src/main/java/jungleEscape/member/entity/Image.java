@@ -3,40 +3,36 @@ package jungleEscape.member.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="members")
-public class Member {
+@Table(name="images")
+public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column
-    Integer exp=70;
+    Integer level;
 
     @Column
-    Integer level=1;
+    String image;
 
-    public Member(
-            Integer exp,
-            Integer level
-    ){
-        this.exp = exp;
+    public Image(Integer level, String image){
         this.level = level;
+        this.image = image;
     }
 
-    public Member(){}
+    public Image(){}
 
     public Long getId(){
         return id;
     }
 
-    public Integer getExp(){
-        return exp;
-    }
-
     public Integer getLevel(){
         return level;
     }
+
+    public String getImage(){
+        return image;
+    }
+
 }
-
-

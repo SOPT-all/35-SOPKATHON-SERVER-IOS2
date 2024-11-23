@@ -10,7 +10,7 @@ import java.util.Optional;
 @Service
 public class QuestService {
     final static int NUM_OF_QUESTS = 5;
-    final private SynchronizedCounter counter = new SynchronizedCounter(NUM_OF_QUESTS);
+    final private SynchronizedCounter counter = new SynchronizedCounter(NUM_OF_QUESTS*3);
 
     final private QuestRepository questRepository;
     public QuestService(QuestRepository questRepository) {

@@ -16,7 +16,7 @@ public class SynchronizedCounter {
     }
 
     public synchronized int getCounter() {
-        return counter;
+        return counter/3;
     }
 }
 

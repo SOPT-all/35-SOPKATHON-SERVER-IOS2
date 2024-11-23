@@ -9,11 +9,11 @@ import java.util.Optional;
 
 @Service
 public class QuestService {
-    final static int NUM_OF_QUESTS = 5;
-    final private SynchronizedCounter counter = new SynchronizedCounter(NUM_OF_QUESTS*3);
 
+    final private SynchronizedCounter counter;
     final private QuestRepository questRepository;
-    public QuestService(QuestRepository questRepository) {
+    public QuestService(SynchronizedCounter counter, QuestRepository questRepository) {
+        this.counter = counter;
         this.questRepository = questRepository;
     }
 
@@ -22,7 +22,6 @@ public class QuestService {
         if(quest.isEmpty()){
             throw new RuntimeException();
         }
-        counter.incrementAndSet();
         return quest.get();
     }
 

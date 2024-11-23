@@ -1,11 +1,13 @@
 package jungleEscape.quest;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SynchronizedCounter {
     private int counter = 1; // 일반 int 사용
-    private final int maxValue; // 최대 값 설정
+    private final int maxValue = 5; // 최대 값 설정
 
-    public SynchronizedCounter(int maxValue) {
-        this.maxValue = maxValue;
+    public SynchronizedCounter() {
     }
 
     public synchronized void incrementAndSet() {

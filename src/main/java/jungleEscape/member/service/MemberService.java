@@ -4,6 +4,7 @@ import jungleEscape.member.entity.Image;
 import jungleEscape.member.entity.Member;
 import jungleEscape.member.repository.ImageRepository;
 import jungleEscape.member.repository.MemberRepository;
+import jungleEscape.quest.SynchronizedCounter;
 import jungleEscape.quest.entity.Quest;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +14,12 @@ import java.util.Optional;
 @Service
 public class MemberService {
 
+    final private SynchronizedCounter counter;
     final private MemberRepository memberRepository;
     final private ImageRepository imageRepository;
-    public MemberService(MemberRepository memberRepository, ImageRepository imageRepository) {
+
+    public MemberService(SynchronizedCounter counter, MemberRepository memberRepository, ImageRepository imageRepository) {
+        this.counter = counter;
         this.memberRepository = memberRepository;
         this.imageRepository = imageRepository;
     }
@@ -55,7 +59,7 @@ public class MemberService {
 
         member.setExp(addedExp);
         member.setLevel(memberLevel);
-
+        counter.incrementAndSet();
         memberRepository.save(member);
     }
 

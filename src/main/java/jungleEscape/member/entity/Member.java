@@ -11,7 +11,7 @@ public class Member {
     Long id;
 
     @Column
-    Integer exp=70;
+    public Integer exp=70;
 
     @Column
     Integer level=1;
@@ -36,6 +36,14 @@ public class Member {
 
     public Integer getLevel(){
         return level;
+    }
+
+    public void setExp(Integer exp){
+        this.exp = exp;
+    }
+
+    public void setLevel(Integer level){
+        this.level = level;
     }
 }
 

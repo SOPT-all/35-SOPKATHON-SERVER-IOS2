@@ -47,7 +47,7 @@ public class Member {
 
     public void setLevel(Integer level){
         this.level = level;
-
+    }
     public String getImgUrl(){
         return imgUrl;
     }

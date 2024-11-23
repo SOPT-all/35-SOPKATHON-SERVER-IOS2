@@ -16,6 +16,8 @@ public class Member {
     @Column
     Integer level=1;
 
+    String imgUrl;
+
     public Member(
             Integer exp,
             Integer level
@@ -38,12 +40,20 @@ public class Member {
         return level;
     }
 
+
     public void setExp(Integer exp){
         this.exp = exp;
     }
 
     public void setLevel(Integer level){
         this.level = level;
+
+    public String getImgUrl(){
+        return imgUrl;
+    }
+    public void setImgUrl(String imgUrl){
+        this.imgUrl = imgUrl;
+
     }
 }
 

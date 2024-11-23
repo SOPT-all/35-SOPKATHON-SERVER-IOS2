@@ -1,7 +1,7 @@
 package jungleEscape.quest;
 
 public class SynchronizedCounter {
-    private int counter = 0; // 일반 int 사용
+    private int counter = 1; // 일반 int 사용
     private final int maxValue; // 최대 값 설정
 
     public SynchronizedCounter(int maxValue) {
